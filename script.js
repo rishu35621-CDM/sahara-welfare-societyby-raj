@@ -9,3 +9,7 @@ function closeLightbox(){lightbox.classList.remove('open');lightboxImage.src='';
 lightbox.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
 lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+// Static-hosting contact form: prepares an email for the visitor to send.
+const contactForm=document.querySelector('#contact-form');
+if(contactForm){contactForm.addEventListener('submit',event=>{event.preventDefault();if(!contactForm.reportValidity())return;const data=new FormData(contactForm);const subject=encodeURIComponent(String(data.get('subject')));const body=encodeURIComponent(`Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\nMessage:\n${data.get('message')}`);document.querySelector('#form-status').textContent='Opening your email app with the message details…';window.location.href=`mailto:connectwithsahara@study.iitm.ac.in?subject=${subject}&body=${body}`;});}
