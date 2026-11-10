@@ -5,3 +5,32 @@
 /* Contact form */
 .contact-content{display:grid;gap:18px}.contact-form{background:#fff8eb;border:1px solid #eadfce;padding:30px;display:grid;gap:10px}.contact-form h3{font:700 23px Manrope;margin:0 0 2px}.contact-form>p{font-size:12px;line-height:1.6;color:#887765;margin:0 0 8px}.contact-form label{font-size:10px;font-weight:700;letter-spacing:.06em;color:#79583c;margin-top:5px}.contact-form input,.contact-form textarea{width:100%;border:1px solid #e3d4c1;background:#fffdf8;padding:13px 14px;font:13px 'DM Sans',sans-serif;color:var(--ink);border-radius:2px;outline:none}.contact-form input:focus,.contact-form textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px #e78b2220}.contact-form textarea{resize:vertical;min-height:120px}.contact-form button{justify-self:start;border:0;cursor:pointer;margin-top:8px}.form-note,.form-status{font-size:10px;color:#927f6b;line-height:1.6;margin:0}.form-status{color:#4c713e;font-weight:600}.contact-form button:focus-visible{outline:3px solid #e78b22;outline-offset:3px}
 @media(max-width:650px){.contact-form{padding:22px}.contact-content{gap:14px}}
+
+/* SAHARA polish and accessibility */
+:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+::selection{background:#f3b84e;color:#3e2112}
+.site-header{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.brand{transition:transform .25s ease}.brand:hover{transform:translateY(-2px)}
+.nav a{transition:color .2s ease,background .2s ease,transform .2s ease}
+.nav-cta:hover{background:var(--brown);color:#fff;transform:translateY(-2px)}
+.hero{isolation:isolate}.hero-art{animation:art-enter .9s ease both}
+.hero-copy{animation:copy-enter .75s ease both}
+@keyframes art-enter{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes copy-enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.work-card,.person,.event{transition:transform .25s ease,box-shadow .25s ease}
+.work-card:hover,.person:hover{transform:translateY(-6px);box-shadow:0 18px 38px #5a35151a}
+.person{border-radius:12px;overflow:hidden}
+.team-grid .person-photo{display:block;width:100%;height:260px;max-width:100%;margin:0 auto 1rem;object-fit:cover;object-position:center 25%;border-radius:10px;background:#eadfce}
+.person h3{margin-top:15px}.event:hover{transform:translateX(5px)}
+.gallery-item{border-radius:10px}.gallery-item:focus-visible{outline-offset:4px}
+.contact-content{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.contact-form{border-radius:12px;box-shadow:0 12px 35px #5a35150b}
+.contact-card{border-radius:12px}
+.contact-form button{transition:transform .2s ease,background .2s ease}
+.contact-form button:hover{transform:translateY(-2px);background:var(--brown)}
+.lightbox{backdrop-filter:blur(8px)}
+.lightbox-close{width:48px;height:48px;border-radius:50%;background:#ffffff18;line-height:1}
+.source-note{line-height:1.6}
+@media(max-width:900px){.contact-content{grid-template-columns:1fr}}
+@media(max-width:650px){.team-grid .person-photo{height:180px}.hero-art{overflow:hidden}.section-heading{margin-bottom:32px}.contact-content{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
